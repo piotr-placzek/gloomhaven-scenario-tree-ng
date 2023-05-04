@@ -1,0 +1,12 @@
+{
+    "scenario": {
+        "name": {
+            "#1 Black Barrow": "#1 Black Barrow"
+        },
+        "treasure": {
+            "description": {
+                "Random Side Scenario": "Random Side Scenario"
+            }
+        }
+    }
+}

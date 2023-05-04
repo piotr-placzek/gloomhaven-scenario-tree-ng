@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { TranslateService } from '@ngx-translate/core';
 import { AssetService } from './asset.service';
 import { TreeLogicService } from './tree-logic.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,8 +15,12 @@ export class AppComponent implements OnInit {
   constructor(
     private assetService: AssetService,
     private treeLogicService: TreeLogicService,
-    private snackBar: MatSnackBar
-  ) {}
+    private snackBar: MatSnackBar,
+    translateService: TranslateService
+  ) {
+    translateService.setDefaultLang('en');
+    translateService.use('en');
+  }
   ngOnInit() {
     this.assetService.getScenariosJSON().subscribe(scenarios => this.scenarios = scenarios);
   }
